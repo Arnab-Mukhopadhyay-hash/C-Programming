@@ -48,19 +48,15 @@ void traverse(struct my_array *a)
 }
 
 // the following function is under process
-// void sort_arr(struct my_array *a){
-//     int min;
-//     for(int i = 0; i <= a->top; i++){
-//         min = a->ptr[i];
-//         if(a->ptr[i+1] < min){
-//             int temp = a->ptr[i+1];
-//             int j;
-//             for(j = i; j >= 0; j--){
-//                 a->ptr[j+1] = a->ptr[j];
-//             }
-//             a->ptr[j] = temp;
-//         }
-//     }
+void bubble_sortarr(struct my_array *a){
+    for(int i = 0; i <= a->top; i++){
+        for(int j = 0; j < a->top-i; j++){
+            if(a->ptr[j] > a->ptr[j+1]){
+                swap(&(a->ptr[j]), &(a->ptr[j+1]));
+            }
+        }
+    }
+}
     
 }
 int main()
